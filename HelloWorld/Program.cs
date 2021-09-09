@@ -6,8 +6,19 @@ namespace HelloWorld
     {
         public static void Main(string[] args)
         {
-            // Console.WriteLine("Enter a year");
-            // string year = Console.ReadLine();
+            Console.WriteLine("Enter a year");
+            string yearInput = Console.ReadLine();
+
+            int year = Int32.Parse(yearInput);
+
+            if (isLeapYear(year))
+            {
+                Console.WriteLine("yay");
+            }
+            else
+            {
+                Console.WriteLine("nay");
+            }
         }
 
         public static bool isLeapYear(int year)
