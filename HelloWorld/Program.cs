@@ -6,18 +6,29 @@ namespace HelloWorld
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter a year");
-            string yearInput = Console.ReadLine();
-
-            int year = Int32.Parse(yearInput);
-
-            if (isLeapYear(year))
+            try
             {
-                Console.WriteLine("yay");
+                Console.WriteLine("Enter a year");
+                string yearInput = Console.ReadLine();
+
+                int year = Int32.Parse(yearInput);
+
+                if (isLeapYear(year))
+                {
+                    Console.WriteLine("yay");
+                }
+                else
+                {
+                    Console.WriteLine("nay");
+                }
             }
-            else
+            catch (SystemException)
             {
-                Console.WriteLine("nay");
+                throw new Exception("A number was excepted, but another data type was received");
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Something went wrong", e);
             }
         }
 
