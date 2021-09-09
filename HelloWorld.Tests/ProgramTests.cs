@@ -6,22 +6,6 @@ namespace HelloWorld.Tests
 {
     public class ProgramTests
     {
-        [Fact]
-        public void Main_prints_Hello_World()
-        {
-            // Arrange
-            var writer = new StringWriter();
-            Console.SetOut (writer);
-
-            // Act
-            Program.Main(new String[0]);
-
-            // Assert
-            var output = writer.GetStringBuilder().ToString().Trim();
-
-            Assert.Equal("Hello, World!", output);
-        }
-
         // int[] testYears = new int[] {8, 15, 20, 1200, 1500, 1600, 2020, 2021}
         // Check if a year is exactly divisible by 4
         // If a year is also exactly divisible by 100, then they should be checked if they are divisible by 400
